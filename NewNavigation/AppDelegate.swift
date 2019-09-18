@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let navigationController = NavigationController()
+    var moreNavigationController:UINavigationController?
     let tc = TabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -26,7 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let v3 = ViewController()
         let v4 = DummyViewController()
         let v5 = ViewController()
-        let v6 = SolitionViewController()
+        let v6 = DummyViewController()
+        let v7 = ViewController()
+        let v8 = ViewController()
+        let v9 = ViewController()
         
         v1.tabBarItem = UITabBarItem(title: "Widget 1", image: nil, selectedImage: nil)
         v2.tabBarItem = UITabBarItem(title: "Widget 2", image: nil, selectedImage: nil)
@@ -34,8 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         v4.tabBarItem = UITabBarItem(title: "Solution 1", image: nil, selectedImage: nil)
         v5.tabBarItem = UITabBarItem(title: "Widget 4", image: nil, selectedImage: nil)
         v6.tabBarItem = UITabBarItem(title: "Solution 2", image: nil, selectedImage: nil)
+        v7.tabBarItem = UITabBarItem(title: "Widget 5", image: nil, selectedImage: nil)
+        v8.tabBarItem = UITabBarItem(title: "Widget 6", image: nil, selectedImage: nil)
+        v9.tabBarItem = UITabBarItem(title: "Widget 7", image: nil, selectedImage: nil)
         
-        tc.viewControllers = [v1, v2, v3, v4, v5, v6]
+        tc.viewControllers = [v1, v2, v3, v4, v5, v6, v7, v8, v9]
         navigationController.viewControllers = [tc]
         navigationController.isNavigationBarHidden = true
 
@@ -77,6 +84,10 @@ extension AppDelegate:UITabBarControllerDelegate{
         navigationController.isNavigationBarHidden = true
         
         switch viewController{
+            
+        case is UINavigationController:
+            print("MORE NAV BAR", (viewController as! UINavigationController).viewControllers)
+            return true
         case is DummyViewController:
             navigationController.isNavigationBarHidden = false
             let solutionVIewCOntroller = SolitionViewController()
