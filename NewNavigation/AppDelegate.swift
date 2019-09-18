@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tc.viewControllers = [v1, v2, v3, v4, v5, v6, v7, v8, v9]
         navigationController.viewControllers = [tc]
+        navigationController.delegate = self
         navigationController.isNavigationBarHidden = true
 
         window?.rootViewController = navigationController
@@ -101,7 +102,6 @@ extension AppDelegate:UITabBarControllerDelegate{
 
 extension AppDelegate:UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        print("WILL SHOW VC FROM NAV", viewController)
         if viewController == tc{
             navigationController.isNavigationBarHidden = true
         }

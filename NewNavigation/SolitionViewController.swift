@@ -23,7 +23,7 @@ class SolitionViewController: TabBarController {
         v2.tabBarItem = UITabBarItem(title: String(format: "Widget 2.%d", 1), image: nil, selectedImage: nil)
         v3.tabBarItem = UITabBarItem(title: String(format: "Widget 3 %d", 1), image: nil, selectedImage: nil)
         v4.tabBarItem = UITabBarItem(title: String(format: "Widget 4.%d", 1), image: nil, selectedImage: nil)
-        v5.tabBarItem = UITabBarItem(title: String(format: "Widget 4.%d", 1), image: nil, selectedImage: nil)
+        v5.tabBarItem = UITabBarItem(title: String(format: "Widget 5.%d", 1), image: nil, selectedImage: nil)
         
         viewControllers = [v1, v2, v3, v4, v5]
     }

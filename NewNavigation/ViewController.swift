@@ -9,11 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var label:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 36)
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(label)
+
+        label.text = tabBarItem.title!
+        label.sizeToFit()
+        label.center = view.center
     }
 }
 
