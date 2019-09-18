@@ -12,6 +12,8 @@ class SolitionViewController: TabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Awesome Solution"
 
         let v1 = ViewController()
         let v2 = ViewController()

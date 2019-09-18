@@ -92,7 +92,7 @@ extension AppDelegate:UITabBarControllerDelegate{
         case is DummyViewController:
             navigationController.isNavigationBarHidden = false
             let solutionVIewCOntroller = SolitionViewController()
-            navigationController.pushViewController(solutionVIewCOntroller, animated: true)
+            navigationController.pushViewController(solutionVIewCOntroller, animated: false)
             return false
         default:
             return true
@@ -103,6 +103,7 @@ extension AppDelegate:UITabBarControllerDelegate{
 extension AppDelegate:UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if viewController == tc{
+            navigationController.popViewController(animated: false)
             navigationController.isNavigationBarHidden = true
         }
     }
