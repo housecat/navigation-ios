@@ -14,7 +14,9 @@
 		CD183AB1232B06E200B8ECD5 /* NewNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183AB0232B06E200B8ECD5 /* NewNavigationTests.swift */; };
 		CD183ABC232B06E200B8ECD5 /* NewNavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183ABB232B06E200B8ECD5 /* NewNavigationUITests.swift */; };
 		CD183ACA232B09D600B8ECD5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183AC9232B09D600B8ECD5 /* TabBarController.swift */; };
-		CD183ACC232B0B3000B8ECD5 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183ACB232B0B3000B8ECD5 /* DummyViewController.swift */; };
+		CD183ACC232B0B3000B8ECD5 /* SolitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183ACB232B0B3000B8ECD5 /* SolitionViewController.swift */; };
+		CD183ACE2332C29800B8ECD5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183ACD2332C29800B8ECD5 /* NavigationController.swift */; };
+		CD183AD02332C59200B8ECD5 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD183ACF2332C59200B8ECD5 /* DummyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,9 @@
 		CD183ABB232B06E200B8ECD5 /* NewNavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNavigationUITests.swift; sourceTree = "<group>"; };
 		CD183ABD232B06E200B8ECD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD183AC9232B09D600B8ECD5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		CD183ACB232B0B3000B8ECD5 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		CD183ACB232B0B3000B8ECD5 /* SolitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitionViewController.swift; sourceTree = "<group>"; };
+		CD183ACD2332C29800B8ECD5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CD183ACF2332C59200B8ECD5 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				CD183A9B232B06E100B8ECD5 /* AppDelegate.swift */,
-				CD183A9D232B06E100B8ECD5 /* ViewController.swift */,
 				CD183AA2232B06E100B8ECD5 /* Assets.xcassets */,
 				CD183AA4232B06E100B8ECD5 /* LaunchScreen.storyboard */,
 				CD183AA7232B06E100B8ECD5 /* Info.plist */,
 				CD183AC9232B09D600B8ECD5 /* TabBarController.swift */,
-				CD183ACB232B0B3000B8ECD5 /* DummyViewController.swift */,
+				CD183ACB232B0B3000B8ECD5 /* SolitionViewController.swift */,
+				CD183A9D232B06E100B8ECD5 /* ViewController.swift */,
+				CD183ACF2332C59200B8ECD5 /* DummyViewController.swift */,
+				CD183ACD2332C29800B8ECD5 /* NavigationController.swift */,
 			);
 			path = NewNavigation;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			files = (
 				CD183ACA232B09D600B8ECD5 /* TabBarController.swift in Sources */,
 				CD183A9E232B06E100B8ECD5 /* ViewController.swift in Sources */,
+				CD183ACE2332C29800B8ECD5 /* NavigationController.swift in Sources */,
 				CD183A9C232B06E100B8ECD5 /* AppDelegate.swift in Sources */,
-				CD183ACC232B0B3000B8ECD5 /* DummyViewController.swift in Sources */,
+				CD183AD02332C59200B8ECD5 /* DummyViewController.swift in Sources */,
+				CD183ACC232B0B3000B8ECD5 /* SolitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

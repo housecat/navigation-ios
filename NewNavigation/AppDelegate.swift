@@ -12,34 +12,32 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let navigationController = UINavigationController()
-
+    let navigationController = NavigationController()
+    let tc = TabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let tabBarController = TabBarController()
-        tabBarController.delegate = self
+        
+        tc.delegate = self
         let v1 = ViewController()
         let v2 = ViewController()
         let v3 = ViewController()
         let v4 = DummyViewController()
         let v5 = ViewController()
-        let v6 = ViewController()
+        let v6 = SolitionViewController()
         
         v1.tabBarItem = UITabBarItem(title: "Widget 1", image: nil, selectedImage: nil)
         v2.tabBarItem = UITabBarItem(title: "Widget 2", image: nil, selectedImage: nil)
         v3.tabBarItem = UITabBarItem(title: "Widget 3", image: nil, selectedImage: nil)
-        v4.tabBarItem = UITabBarItem(title: "Solution", image: nil, selectedImage: nil)
+        v4.tabBarItem = UITabBarItem(title: "Solution 1", image: nil, selectedImage: nil)
         v5.tabBarItem = UITabBarItem(title: "Widget 4", image: nil, selectedImage: nil)
-        v6.tabBarItem = UITabBarItem(title: "Widget 5", image: nil, selectedImage: nil)
+        v6.tabBarItem = UITabBarItem(title: "Solution 2", image: nil, selectedImage: nil)
         
-        tabBarController.viewControllers = [v1, v2, v3, v4, v5, v6]
-        
-        
-        navigationController.viewControllers = [tabBarController]
-        navigationController.view.backgroundColor = .white
+        tc.viewControllers = [v1, v2, v3, v4, v5, v6]
+        navigationController.viewControllers = [tc]
+        navigationController.isNavigationBarHidden = true
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -73,32 +71,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate:UITabBarControllerDelegate{
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController is DummyViewController{
-            
-            let count = navigationController.viewControllers.count
-            
-            let tabBarController = TabBarController()
-            tabBarController.delegate = self
-            let v1 = ViewController()
-            let v2 = ViewController()
-            let v3 = ViewController()
-            let v4 = ViewController()
-            let v5 = DummyViewController()
-            
-            v1.tabBarItem = UITabBarItem(title: String(format: "Widget 1.%d", count, count), image: nil, selectedImage: nil)
-            v2.tabBarItem = UITabBarItem(title: String(format: "Widget 2.%d", count, count), image: nil, selectedImage: nil)
-            v3.tabBarItem = UITabBarItem(title: String(format: "Widget 3 %d", count, count), image: nil, selectedImage: nil)
-            v4.tabBarItem = UITabBarItem(title: String(format: "Widget 4.%d", count, count), image: nil, selectedImage: nil)
-            v5.tabBarItem = UITabBarItem(title: "Solution " + String(count), image: nil, selectedImage: nil)
-            
-            tabBarController.viewControllers = [v1, v2, v3, v4, v5]
-            
 
-            navigationController.pushViewController(tabBarController, animated: true)
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+        navigationController.isNavigationBarHidden = true
+        
+        switch viewController{
+        case is DummyViewController:
+            navigationController.isNavigationBarHidden = false
+            let solutionVIewCOntroller = SolitionViewController()
+            navigationController.pushViewController(solutionVIewCOntroller, animated: true)
             return false
+        default:
+            return true
         }
-        return true
+    }
+}
+
+extension AppDelegate:UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        print("WILL SHOW VC FROM NAV", viewController)
+        if viewController == tc{
+            navigationController.isNavigationBarHidden = true
+        }
     }
 }
 
