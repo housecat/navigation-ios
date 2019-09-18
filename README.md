@@ -1,0 +1,1 @@
+Template for the Core App navigation. Purely for researhch purposes. Feel free to fork and add any new ideas
