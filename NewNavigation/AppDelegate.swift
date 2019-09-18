@@ -18,24 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-//        navigationController.isNavigationBarHidden = true
 
         let tabBarController = TabBarController()
         tabBarController.delegate = self
         let v1 = ViewController()
         let v2 = ViewController()
         let v3 = ViewController()
-        let v4 = ViewController()
-        let v5 = DummyViewController()
+        let v4 = DummyViewController()
+        let v5 = ViewController()
+        let v6 = ViewController()
         
         v1.tabBarItem = UITabBarItem(title: "Widget 1", image: nil, selectedImage: nil)
         v2.tabBarItem = UITabBarItem(title: "Widget 2", image: nil, selectedImage: nil)
         v3.tabBarItem = UITabBarItem(title: "Widget 3", image: nil, selectedImage: nil)
-        v4.tabBarItem = UITabBarItem(title: "Widget 4", image: nil, selectedImage: nil)
-        v5.tabBarItem = UITabBarItem(title: "Solution", image: nil, selectedImage: nil)
+        v4.tabBarItem = UITabBarItem(title: "Solution", image: nil, selectedImage: nil)
+        v5.tabBarItem = UITabBarItem(title: "Widget 4", image: nil, selectedImage: nil)
+        v6.tabBarItem = UITabBarItem(title: "Widget 5", image: nil, selectedImage: nil)
         
-        tabBarController.viewControllers = [v1, v2, v3, v4,  v5]
+        tabBarController.viewControllers = [v1, v2, v3, v4, v5, v6]
         
         
         navigationController.viewControllers = [tabBarController]
