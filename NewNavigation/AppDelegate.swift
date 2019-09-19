@@ -87,7 +87,6 @@ extension AppDelegate:UITabBarControllerDelegate{
         switch viewController{
             
         case is UINavigationController:
-            print("MORE NAV BAR", (viewController as! UINavigationController).viewControllers)
             return true
         case is DummyViewController:
             navigationController.isNavigationBarHidden = false
